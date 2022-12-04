@@ -14,9 +14,9 @@ $vehicletitle=$_POST['vehicletitle'];
 $brand=$_POST['brandname'];
 $vehicleoverview=$_POST['vehicalorcview'];
 $priceperday=$_POST['priceperday'];
-// $fueltype=$_POST['fueltype'];
-// $modelyear=$_POST['modelyear'];
-// $seatingcapacity=$_POST['seatingcapacity'];
+$fueltype=$_POST['fueltype'];
+$modelyear=$_POST['modelyear'];
+$seatingcapacity=$_POST['seatingcapacity'];
 $vimage1=$_FILES["img1"]["name"];
 $vimage2=$_FILES["img2"]["name"];
 $vimage3=$_FILES["img3"]["name"];
@@ -54,18 +54,18 @@ $query->bindParam(':vimage2',$vimage2,PDO::PARAM_STR);
 $query->bindParam(':vimage3',$vimage3,PDO::PARAM_STR);
 $query->bindParam(':vimage4',$vimage4,PDO::PARAM_STR);
 $query->bindParam(':vimage5',$vimage5,PDO::PARAM_STR);
-// $query->bindParam(':airconditioner',$airconditioner,PDO::PARAM_STR);
-// $query->bindParam(':powerdoorlocks',$powerdoorlocks,PDO::PARAM_STR);
-// $query->bindParam(':antilockbrakingsys',$antilockbrakingsys,PDO::PARAM_STR);
-// $query->bindParam(':brakeassist',$brakeassist,PDO::PARAM_STR);
-// $query->bindParam(':powersteering',$powersteering,PDO::PARAM_STR);
-// $query->bindParam(':driverairbag',$driverairbag,PDO::PARAM_STR);
-// $query->bindParam(':passengerairbag',$passengerairbag,PDO::PARAM_STR);
-// $query->bindParam(':powerwindow',$powerwindow,PDO::PARAM_STR);
-// $query->bindParam(':cdplayer',$cdplayer,PDO::PARAM_STR);
-// $query->bindParam(':centrallocking',$centrallocking,PDO::PARAM_STR);
-// $query->bindParam(':crashcensor',$crashcensor,PDO::PARAM_STR);
-// $query->bindParam(':leatherseats',$leatherseats,PDO::PARAM_STR);
+$query->bindParam(':airconditioner',$airconditioner,PDO::PARAM_STR);
+$query->bindParam(':powerdoorlocks',$powerdoorlocks,PDO::PARAM_STR);
+$query->bindParam(':antilockbrakingsys',$antilockbrakingsys,PDO::PARAM_STR);
+$query->bindParam(':brakeassist',$brakeassist,PDO::PARAM_STR);
+$query->bindParam(':powersteering',$powersteering,PDO::PARAM_STR);
+$query->bindParam(':driverairbag',$driverairbag,PDO::PARAM_STR);
+$query->bindParam(':passengerairbag',$passengerairbag,PDO::PARAM_STR);
+$query->bindParam(':powerwindow',$powerwindow,PDO::PARAM_STR);
+$query->bindParam(':cdplayer',$cdplayer,PDO::PARAM_STR);
+$query->bindParam(':centrallocking',$centrallocking,PDO::PARAM_STR);
+$query->bindParam(':crashcensor',$crashcensor,PDO::PARAM_STR);
+$query->bindParam(':leatherseats',$leatherseats,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
@@ -187,33 +187,20 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Price Per Day(in USD)<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Price Per Day(in PESO)<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="text" name="priceperday" class="form-control" required>
 </div>
-<!-- <label class="col-sm-2 control-label">Select Fuel Type<span style="color:red">*</span></label>
-<div class="col-sm-4">
-<select class="selectpicker" name="fueltype" required>
-<option value=""> Select </option>
-
-<option value="Petrol">Petrol</option>
-<option value="Diesel">Diesel</option>
-<option value="CNG">CNG</option>
-</select>
-</div> -->
 </div>
 
 
-<!-- <div class="form-group">
+<div class="form-group">
 <label class="col-sm-2 control-label">Model Year<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="text" name="modelyear" class="form-control" required>
 </div>
-<label class="col-sm-2 control-label">Seating Capacity<span style="color:red">*</span></label>
-<div class="col-sm-4">
-<input type="text" name="seatingcapacity" class="form-control" required>
+
 </div>
-</div> -->
 <div class="hr-dashed"></div>
 
 
